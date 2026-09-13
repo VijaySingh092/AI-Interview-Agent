@@ -3,8 +3,28 @@ import { FaRobot } from "react-icons/fa";
 import { IoSparkles } from "react-icons/io5";
 import { motion } from "motion/react"
 import { FcGoogle } from "react-icons/fc";
+import { linkWithCredential, signInWithPopup } from 'firebase/auth';
+import { auth, provider } from '../utils/firebase';
+import { ServerUrl } from '../App';
+import axios from 'axios'
 
 const Auth = () => {
+
+    const handleGoogleAuth = async()=>{
+        try{
+            const response = await signInWithPopup(auth,provider) //  Opens the Google sign-in/consent popup
+            console.log(response)
+            let User = response.user
+            let name = User.displayName
+            let email = User.email
+
+            const result = await axios.post(ServerUrl +"/api/auth/google",{name,email},{withCredentials:true})
+            console.log(result.data)
+            
+        }catch(error){
+            console.log(`Google auth error : ${error}`)
+        }
+    }
   return (
     <div className='w-full min-h-screen bg-[#f3f3f3] flex items-center justify-center px-6 py-20 '>
       <motion.div 
@@ -24,6 +44,7 @@ const Auth = () => {
             </h1>
         <p className='text-gray-500 text-center text-sm md:text-base leading-relaxed mb-8'> Sign in to start Ai-powered mock interview,track your progress, and unlock detailed performaces insights.</p>
         <motion.button
+        onClick={handleGoogleAuth}
         whileHover={{opacity:0.9,scale:1.03}}
         whileTap={{opacity:1,scale:0.98}}
          className='w-full flex items-center justify-center gap-3 py-3 bg-black text-white rounded-full shadow-md'>
