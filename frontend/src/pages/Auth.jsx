@@ -13,13 +13,13 @@ const Auth = () => {
     const handleGoogleAuth = async()=>{
         try{
             const response = await signInWithPopup(auth,provider) //  Opens the Google sign-in/consent popup
-            console.log(response)
+            // console.log(response)
             let User = response.user
             let name = User.displayName
             let email = User.email
 
             const result = await axios.post(ServerUrl +"/api/auth/google",{name,email},{withCredentials:true})
-            console.log(result.data)
+            // console.log(result.data)
             
         }catch(error){
             console.log(`Google auth error : ${error}`)
