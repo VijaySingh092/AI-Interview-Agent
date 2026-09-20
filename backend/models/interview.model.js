@@ -38,7 +38,7 @@ const interviewSchema = new mongoose.Schema({
     finalScore:{type:Number, default:0},
     status:{
         type:String,
-        enum:["incomplet","completed"],
+        enum:["incompleted","completed"],
         default:"incompleted"
     }
 
