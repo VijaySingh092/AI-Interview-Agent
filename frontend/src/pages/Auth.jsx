@@ -43,13 +43,13 @@ const Auth = ({isModel = false}) => {
             <div className='bg-black text-white p-2 rounded-lg'>
                 <FaRobot size={18}/>
             </div>
-            <h2 className='font-semibold text-lg'>InterviewAi</h2>
+            <h2 className='font-semibold text-lg'>LunaAI</h2>
             </div>
             <h1 className='text-2xl md:text-3xl font-semibold text-center leading-snug mb-4'>Continue with
                 <span className='bg-green-100 text-green-600 px-3 py-1 rounded-full inline-flex items-center gap-2'>
                 <IoSparkles size={16}/>AI smart interview</span>
             </h1>
-        <p className='text-gray-500 text-center text-sm md:text-base leading-relaxed mb-8'> Sign in to start Ai-powered mock interview,track your progress, and unlock detailed performaces insights.</p>
+        <p className='text-gray-500 text-center text-sm md:text-base leading-relaxed mb-8'> Sign in to practice AI-powered interviews, track your progress, and gain detailed performance insights.</p>
         <motion.button
         onClick={handleGoogleAuth}
         whileHover={{opacity:0.9,scale:1.03}}
