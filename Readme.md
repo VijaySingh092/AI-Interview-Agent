@@ -37,6 +37,12 @@ The platform generates personalized interview questions based on the candidate's
 
   * Keep track of previous interviews and review your performance.
 
+* 📥 **PDF Report Download**
+
+  * Generate and download the complete interview performance report as a PDF.
+  * Includes overall score, question-wise evaluation, feedback, and performance metrics.
+  * Useful for saving and reviewing interview results offline.
+
 * 🔐 **Authentication**
 
   * Google authentication using Firebase.
